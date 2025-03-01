@@ -14,9 +14,6 @@ const NavBar = () => {
     return (
         <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarStyle: {
-            display: route.name === "Logout" ? "none" : "flex",
-        },
         tabBarIcon: ({ color, size }) => {
           let iconName;
           if (route.name === "Home") iconName = "home-outline";
@@ -26,6 +23,9 @@ const NavBar = () => {
           else if (route.name === "About") iconName = "information-circle-outline";
           else if (route.name === "Logout") iconName = "log-out-outline";
           return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarStyle: {
+            display: route.name === "Logout" ? "none" : "flex",
         },
         tabBarActiveTintColor: "tomato",
         tabBarInactiveTintColor: "gray",
