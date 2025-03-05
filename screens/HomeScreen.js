@@ -5,9 +5,9 @@ import Carousel from "react-native-reanimated-carousel";
 const { width } = Dimensions.get("window");
 
 const featuredItems = [
-    { id: "1", image: require("../assets/images/apples.jpg") },
-    { id: "2", image: require("../assets/images/apples.jpg") },
-    { id: "3", image: require("../assets/images/apples.jpg") },
+    { id: "1", image: require("../assets/images/cart.jpg") },
+    { id: "2", image: require("../assets/images/basket.jpg") },
+    { id: "3", image: require("../assets/images/grocery.jpg") },
 ];
 
 const categories = [
@@ -34,11 +34,17 @@ const HomeScreen = () => {
 
             <Carousel
                 loop
-                width={width * 0.9}
+                width={width}
                 height={150}
                 autoPlay
                 data={featuredItems}
                 scrollAnimationDuration={1000}
+                snapEnabled={true}
+                mode="parallax"
+                modeConfig={{
+                    parallaxScrollingScale: 0.9, 
+                    parallaxScrollingOffset: 50, 
+                }}
                 renderItem={({ item }) => (
                     <Image source={item.image} style={styles.carouselImage} />
                 )}
@@ -99,7 +105,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#f9f9f9",
     },
 
-    carouselImage: { width: "100%", height: 150, borderRadius: 10, alignSelf: "center" },
+    carouselImage: { width: "100%", height: 150, borderRadius: 10, alignSelf: "center"},
 
     sectionTitle: { fontSize: 18, fontWeight: "bold", marginVertical: 10 },
     categoryContainer: { flexDirection: "row", marginLeft: 30, marginBottom: 10 },
