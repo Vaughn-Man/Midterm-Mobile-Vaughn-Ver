@@ -1,13 +1,13 @@
 import React from "react";
 import { Text, FlatList, Image, TouchableOpacity, StyleSheet, ScrollView, TextInput, Dimensions, View } from "react-native";
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "react-native-reanimated-carousel";
 
 const { width } = Dimensions.get("window");
 
 const featuredItems = [
-    { id: "1", image: "https://via.placeholder.com/300x150/FF5733/FFFFFF?text=Big+Discounts" },
-    { id: "2", image: "https://via.placeholder.com/300x150/33FF57/FFFFFF?text=Flash+Sale" },
-    { id: "3", image: "https://via.placeholder.com/300x150/3357FF/FFFFFF?text=New+Arrivals" },
+    { id: "1", image: require("../assets/images/apples.jpg") },
+    { id: "2", image: require("../assets/images/apples.jpg") },
+    { id: "3", image: require("../assets/images/apples.jpg") },
 ];
 
 const categories = [
@@ -19,16 +19,16 @@ const categories = [
 ];
 
 const products = [
-    { id: "101", name: "Apples", price: "$2.99", image: "https://via.placeholder.com/100" },
-    { id: "102", name: "Bananas", price: "$1.49", image: "https://via.placeholder.com/100" },
-    { id: "103", name: "Milk", price: "$3.49", image: "https://via.placeholder.com/100" },
-    { id: "104", name: "Chicken", price: "$6.99", image: "https://via.placeholder.com/100" },
+    { id: "101", name: "Apples", price: "$2.99", image: require("../assets/images/apples.jpg") },
+    { id: "102", name: "Bananas", price: "$1.49", image: require("../assets/images/bananas.jpg") },
+    { id: "103", name: "Milk", price: "$3.49", image: require("../assets/images/milk.jpg") },
+    { id: "104", name: "Chicken", price: "$6.99", image: require("../assets/images/chicken.jpg") },
 ];
 
 const HomeScreen = () => {
     return (
         <ScrollView>
-            <View style={styles.container}>
+            <View style={styles.searchContainer}>
                 <TextInput style={styles.searchInput} placeholder="Search for products..." />
             </View>
 
@@ -39,8 +39,8 @@ const HomeScreen = () => {
                 autoPlay
                 data={featuredItems}
                 scrollAnimationDuration={1000}
-                rendrItem={({ item }) => (
-                    <Image source={{ uri: item.image }} style={styles.carouselImage} />
+                renderItem={({ item }) => (
+                    <Image source={item.image} style={styles.carouselImage} />
                 )}
             />
 
@@ -62,7 +62,7 @@ const HomeScreen = () => {
                 columnWrapperStyle={{ justifyContent: "space-between" }}
                 renderItem={({ item }) => (
                     <View style={styles.productCard}>
-                        <Image source={{ uri: item.image }} style={styles.productImage} />
+                        <Image source={item.image} style={styles.productImage} />
                         <Text style={styles.productName}>{item.name}</Text>
                         <Text style={styles.productPrice}>{item.price}</Text>
                         <TouchableOpacity style={styles.addButton}>
@@ -77,24 +77,42 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
     container: { flex: 1, padding: 10, backgroundColor: "#fff" },
-  
-    searchContainer: { marginVertical: 10, padding: 10, backgroundColor: "#f1f1f1", borderRadius: 10 },
-    searchInput: { fontSize: 16 },
-  
+
+    searchContainer: { 
+        marginVertical: 10, 
+        padding: 10, 
+        backgroundColor: "#ffffff", 
+        borderRadius: 12, 
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3, 
+    },
+    searchInput: { 
+        fontSize: 16, 
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        borderWidth: 1, 
+        borderColor: "#ddd", 
+        borderRadius: 8,
+        backgroundColor: "#f9f9f9",
+    },
+
     carouselImage: { width: "100%", height: 150, borderRadius: 10, alignSelf: "center" },
-  
+
     sectionTitle: { fontSize: 18, fontWeight: "bold", marginVertical: 10 },
-    categoryContainer: { flexDirection: "row", marginBottom: 10 },
+    categoryContainer: { flexDirection: "row", marginLeft: 30, marginBottom: 10 },
     categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#eee", borderRadius: 10 },
     categoryIcon: { fontSize: 24 },
-  
+
     productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#f9f9f9", padding: 10, borderRadius: 10 },
     productImage: { width: 100, height: 100, borderRadius: 10 },
     productName: { fontSize: 14, fontWeight: "bold", marginVertical: 5 },
     productPrice: { fontSize: 16, color: "tomato" },
     addButton: { marginTop: 5, backgroundColor: "tomato", padding: 5, borderRadius: 5, width: "100%", alignItems: "center" },
     addButtonText: { color: "#fff", fontSize: 14 },
-  });
+});
 
 
 export default HomeScreen;
