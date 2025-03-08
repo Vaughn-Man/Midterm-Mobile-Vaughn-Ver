@@ -16,6 +16,11 @@ const Stack = createStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator options={{ headerShown: false}} >
+      <Stack.Screen 
+          name="Login" 
+          component={LoginScreen} 
+          options={{ headerShown: false }} 
+      />
       <Stack.Screen
       name="NavBar"
       component={NavBar}
@@ -26,7 +31,7 @@ const Stack = createStackNavigator();
           component={HomeScreen}
         />
         <Stack.Screen
-          name="Login"
+          name="Logout"
           component={LoginScreen}
         />
         <Stack.Screen

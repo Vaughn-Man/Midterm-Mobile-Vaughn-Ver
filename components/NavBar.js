@@ -36,7 +36,7 @@ const NavBar = () => {
           else if (route.name === "Logout") iconName = "log-out-outline";
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarStyle: {
+        tabBarStyle:  {
           display: route.name === "Logout" ? "none" : "flex",
         },
         tabBarActiveTintColor: "tomato",
