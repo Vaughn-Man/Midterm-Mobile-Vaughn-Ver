@@ -23,6 +23,8 @@ const products = [
     { id: "102", name: "Bananas", price: "$1.49", image: require("../assets/images/bananas.jpg") },
     { id: "103", name: "Milk", price: "$3.49", image: require("../assets/images/milk.jpg") },
     { id: "104", name: "Chicken", price: "$6.99", image: require("../assets/images/chicken.jpg") },
+    { id: "105", name: "Lettuce", price: "$3.99", image: require("../assets/images/lettuce.jpg") },
+    { id: "106", name: "Shawarma", price: "$2.49", image: require("../assets/images/shawarma.jpg") },
 ];
 
 const HomeScreen = () => {
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
 
     carouselImage: { width: "100%", height: 150, borderRadius: 10, alignSelf: "center"},
 
-    sectionTitle: { fontSize: 18, fontWeight: "bold", marginVertical: 10 },
+    sectionTitle: { fontSize: 18, fontWeight: "bold", marginVertical: 10, marginLeft: 20 },
     categoryContainer: { flexDirection: "row", marginLeft: 30, marginBottom: 10 },
     categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#eee", borderRadius: 10 },
     categoryIcon: { fontSize: 24 },
