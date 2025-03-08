@@ -32,12 +32,12 @@ const NavBar = () => {
         tabBarStyle: { backgroundColor: "#fff", height: 60, paddingBottom: 10 },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Shop" component={ShopScreen} />
-      <Tab.Screen name="Cart" component={CartScreen} />
-      <Tab.Screen name="Contact" component={ContactScreen} />
-      <Tab.Screen name="About" component={AboutScreen} />
-      <Tab.Screen name="Logout" component={LoginScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false}} />
+      <Tab.Screen name="Shop" component={ShopScreen} options={{ headerShown: false}} />
+      <Tab.Screen name="Cart" component={CartScreen} options={{ headerShown: false}} />
+      <Tab.Screen name="Contact" component={ContactScreen} options={{ headerShown: false}} />
+      <Tab.Screen name="About" component={AboutScreen} options={{ headerShown: false}} />
+      <Tab.Screen name="Logout" component={LoginScreen} options={{ headerShown: false}} />
     </Tab.Navigator>
     );
 };

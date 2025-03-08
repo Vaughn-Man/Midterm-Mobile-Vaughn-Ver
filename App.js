@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator options={{ headerShown: false}} >
       <Stack.Screen
       name="NavBar"
       component={NavBar}
@@ -24,32 +24,26 @@ const Stack = createStackNavigator();
       <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Welcome'}}
         />
         <Stack.Screen
           name="Login"
           component={LoginScreen}
-          options={{title: 'Login Form'}}
         />
         <Stack.Screen
           name="Shop"
           component={ShopScreen}
-          options={{title: 'Shop'}}
         />
         <Stack.Screen
           name="Contact"
           component={ContactScreen}
-          options={{title: 'Contact'}}
         />
         <Stack.Screen
           name="Cart"
           component={CartScreen}
-          options={{title: 'Cart'}}
         />
         <Stack.Screen
           name="About"
           component={AboutScreen}
-          options={{title: 'About'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
