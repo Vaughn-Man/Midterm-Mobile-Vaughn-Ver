@@ -11,10 +11,12 @@ const categories = [
 ];
 
 const products = [
-    { id: 1, name: 'Apples', price: '$2/kg', image: require("../assets/images/apples.jpg") },
+    { id: 1, name: 'Apples', price: '$2.99/kg', image: require("../assets/images/apples.jpg") },
     { id: 2, name: 'Carrots', price: '$1/kg', image: require("../assets/images/carrots.jpg") },
     { id: 3, name: 'Chicken Breast', price: '$5/kg', image: require("../assets/images/breast.jpg") },
-    { id: 4, name: 'Shawarma', price: '$2', image: require("../assets/images/shawarma.jpg") },
+    { id: 4, name: 'Shawarma', price: '$2.49', image: require("../assets/images/shawarma.jpg") },
+    { id: 5, name: 'Bananas', price: '$1.49', image: require("../assets/images/bananas.jpg") },
+    { id: 6, name: 'Lettuce', price: '$3.99', image: require("../assets/images/lettuce.jpg") },
 ];
 
 function ShopScreen() {
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
     categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#eee", borderRadius: 10 },
     categoryIcon: { fontSize: 24 },
 
-    productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#fffae6", padding: 10, borderRadius: 10, borderColor: "tomato", borderWidth: 1 },
+    productCard: { width: "48%", marginBottom: 25, alignItems: "center", backgroundColor: "#fffae6", padding: 10, borderRadius: 10, borderColor: "tomato", borderWidth: 1 },
     productImage: { width: 100, height: 100, borderRadius: 10 },
     productName: { fontSize: 14, fontWeight: "bold", marginVertical: 5 },
     productPrice: { fontSize: 16, color: "#27ae60" },
