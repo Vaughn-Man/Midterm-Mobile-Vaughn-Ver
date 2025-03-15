@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
 
     sectionTitle: { fontSize: 20, fontWeight: "bold", marginVertical: 10, marginLeft: 20, color: "#2c3e50" },
     categoryContainer: { flexDirection: "row", marginLeft: 25, marginBottom: 10 },
-    categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#ffd700", borderRadius: 10 },
+    categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#eee", borderRadius: 10 },
     categoryIcon: { fontSize: 24 },
 
     productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#fffae6", padding: 10, borderRadius: 10, borderColor: "#ffd700", borderWidth: 1 },
