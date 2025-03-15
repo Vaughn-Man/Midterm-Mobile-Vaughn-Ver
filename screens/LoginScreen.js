@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, TextInput, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
+import { TextInput, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { View, Text } from "react-native-web";
 
 const LoginScreen = ({ navigation }) => {
@@ -24,7 +24,7 @@ const LoginScreen = ({ navigation }) => {
                 
                 <TouchableOpacity 
                     style={styles.loginButton} 
-                    onPress={() => navigation.navigate('NavBar')}
+                    onPress={() => navigation.navigate('Home')}
                 >
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>

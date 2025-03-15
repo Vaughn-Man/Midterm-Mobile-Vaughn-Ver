@@ -8,6 +8,7 @@ import CartScreen from './screens/CartScreen';
 import AboutScreen from './screens/AboutScreen';
 import LoginScreen from './screens/LoginScreen';
 import NavBar from './components/NavBar';
+import 'react-native-reanimated';
 
 export default function App() {
 
@@ -16,11 +17,6 @@ const Stack = createStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator options={{ headerShown: false}} >
-      <Stack.Screen 
-          name="Login" 
-          component={LoginScreen} 
-          options={{ headerShown: false }} 
-      />
       <Stack.Screen
       name="NavBar"
       component={NavBar}
@@ -49,6 +45,10 @@ const Stack = createStackNavigator();
         <Stack.Screen
           name="About"
           component={AboutScreen}
+        />
+        <Stack.Screen
+        name="Login"
+        component={LoginScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
