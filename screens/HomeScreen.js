@@ -16,6 +16,7 @@ const categories = [
     { id: "3", name: "Dairy", icon: "🥛" },
     { id: "4", name: "Meat", icon: "🥩" },
     { id: "5", name: "Snacks", icon: "🍪" },
+    { id: "6", name: "Misc", icon: "📦" }, 
 ];
 
 const products = [
@@ -51,8 +52,9 @@ const HomeScreen = () => {
                     <Image source={item.image} style={styles.carouselImage} />
                 )}
             />
-
+            <View style={styles.sectionContainer}>
             <Text style={styles.sectionTitle}>Categories</Text>
+            </View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categoryContainer}>
                 {categories.map((item) => (
                     <TouchableOpacity key={item.id} style={styles.categoryItem}>
@@ -62,7 +64,9 @@ const HomeScreen = () => {
                 ))}
             </ScrollView>
 
+            <View style={styles.sectionContainer}>
             <Text style={styles.sectionTitle}>Popular Products</Text>
+            </View>
             <FlatList
                 data={products}
                 numColumns={2}
@@ -107,6 +111,17 @@ const styles = StyleSheet.create({
         backgroundColor: "#f9f9f9",
     },
 
+    sectionContainer: {
+        backgroundColor: "#f8f8f8",
+        borderRadius: 10,
+        width: "100%",
+        alignItems: "center",
+        marginBottom: 20,
+        marginTop: 15,
+        marginLeft: 10,
+        alignSelf: "center",
+    },
+
     carouselImage: { width: "100%", height: 150, borderRadius: 10, alignSelf: "center"},
 
     sectionTitle: { fontSize: 18, fontWeight: "bold", marginVertical: 10, marginLeft: 20 },
@@ -114,7 +129,7 @@ const styles = StyleSheet.create({
     categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#eee", borderRadius: 10 },
     categoryIcon: { fontSize: 24 },
 
-    productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#f9f9f9", padding: 10, borderRadius: 10 },
+    productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#f9f9f9", padding: 10, borderRadius: 10, borderWidth: 2, borderColor: "tomato" },
     productImage: { width: 100, height: 100, borderRadius: 10 },
     productName: { fontSize: 14, fontWeight: "bold", marginVertical: 5 },
     productPrice: { fontSize: 16, color: "tomato" },

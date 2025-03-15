@@ -7,6 +7,7 @@ const categories = [
     { id: "3", name: "Dairy", icon: "🥛" },
     { id: "4", name: "Meat", icon: "🥩" },
     { id: "5", name: "Snacks", icon: "🍪" },
+    { id: "6", name: "Misc", icon: "📦" },
 ];
 
 const products = [
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#eee", borderRadius: 10 },
     categoryIcon: { fontSize: 24 },
 
-    productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#fffae6", padding: 10, borderRadius: 10, borderColor: "#ffd700", borderWidth: 1 },
+    productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#fffae6", padding: 10, borderRadius: 10, borderColor: "tomato", borderWidth: 1 },
     productImage: { width: 100, height: 100, borderRadius: 10 },
     productName: { fontSize: 14, fontWeight: "bold", marginVertical: 5 },
     productPrice: { fontSize: 16, color: "#27ae60" },
