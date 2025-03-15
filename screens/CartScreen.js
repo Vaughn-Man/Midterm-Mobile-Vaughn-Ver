@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import CheckoutModal from '../components/CheckOutModal';
 
 const cartItems = [
     { id: 1, name: 'Apples', price: '$2/kg', quantity: 2, image: require("../assets/images/apples.jpg") },
@@ -8,6 +9,8 @@ const cartItems = [
 ];
 
 function CartScreen() {
+    const [modalVisible, setModalVisible] = useState(false);
+
     const renderCartItem = ({ item }) => (
         <View style={styles.cartItem}>
             <Image source={item.image} style={styles.cartImage} />
@@ -30,9 +33,18 @@ function CartScreen() {
                 renderItem={renderCartItem}
                 keyExtractor={(item) => item.id.toString()}
             />
-            <TouchableOpacity style={styles.checkoutButton}>
+            <TouchableOpacity style={styles.checkoutButton} onPress={() => {setModalVisible(true)}}>
                 <Text style={styles.checkoutButtonText}>Proceed to Checkout</Text>
             </TouchableOpacity>
+
+            <CheckoutModal
+                visible={modalVisible}
+                onCancel={() => setModalVisible(false)}
+                onConfirm={() => {
+                    setModalVisible(false);
+                    alert("Checkout successful!");
+                }}
+            />
         </View>
     );
 }
@@ -42,14 +54,14 @@ const styles = StyleSheet.create({
 
     header: { fontSize: 24, fontWeight: "bold", color: "tomato", textAlign: "center", marginVertical: 15 },
 
-    cartItem: { 
-        flexDirection: "row", 
-        alignItems: "center", 
-        backgroundColor: "#fff5f5", 
-        borderRadius: 10, 
-        padding: 10, 
-        marginVertical: 5, 
-        borderColor: "tomato", 
+    cartItem: {
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: "#fff5f5",
+        borderRadius: 10,
+        padding: 10,
+        marginVertical: 5,
+        borderColor: "tomato",
         borderWidth: 1,
     },
 
@@ -62,11 +74,11 @@ const styles = StyleSheet.create({
     removeButton: { backgroundColor: "#ff6347", padding: 5, borderRadius: 5 },
     removeButtonText: { color: "#fff", fontSize: 14 },
 
-    checkoutButton: { 
-        backgroundColor: "tomato", 
-        padding: 15, 
-        borderRadius: 8, 
-        alignItems: "center", 
+    checkoutButton: {
+        backgroundColor: "tomato",
+        padding: 15,
+        borderRadius: 8,
+        alignItems: "center",
         marginVertical: 15,
     },
     checkoutButtonText: { color: "#fff", fontSize: 18, fontWeight: "bold" },
