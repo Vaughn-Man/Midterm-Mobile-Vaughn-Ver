@@ -7,6 +7,7 @@ import ContactScreen from './screens/ContactScreen';
 import CartScreen from './screens/CartScreen';
 import AboutScreen from './screens/AboutScreen';
 import LoginScreen from './screens/LoginScreen';
+import ProfileScreen from './screens/ProfileScreen';
 import NavBar from './components/NavBar';
 import 'react-native-reanimated';
 
@@ -29,6 +30,10 @@ const Stack = createStackNavigator();
         <Stack.Screen
           name="Logout"
           component={LoginScreen}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
         />
         <Stack.Screen
           name="Shop"

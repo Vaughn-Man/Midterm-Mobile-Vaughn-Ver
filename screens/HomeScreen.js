@@ -143,7 +143,8 @@ const styles = StyleSheet.create({
     categoryContainer: { 
         flexDirection: "row", 
         marginBottom: 15, 
-        paddingHorizontal: 10 
+        paddingHorizontal: 10, 
+        backgroundColor: "#ffebe6",
     },
 
     categoryItem: { 

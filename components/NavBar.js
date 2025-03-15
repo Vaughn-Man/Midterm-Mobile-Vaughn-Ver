@@ -8,6 +8,7 @@ import CartScreen from "../screens/CartScreen";
 import ContactScreen from "../screens/ContactScreen";
 import AboutScreen from "../screens/AboutScreen";
 import LoginScreen from "../screens/LoginScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +35,7 @@ const NavBar = () => {
           else if (route.name === "Contact") iconName = "call-outline";
           else if (route.name === "About") iconName = "information-circle-outline";
           else if (route.name === "Logout") iconName = "log-out-outline";
+          else if (route.name === "Profile") iconName = "person-outline";
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarStyle:  {
@@ -47,6 +49,7 @@ const NavBar = () => {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Shop" component={ShopScreen} />
       <Tab.Screen name="Cart" component={CartScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Contact" component={ContactScreen} />
       <Tab.Screen name="About" component={AboutScreen} />
       <Tab.Screen name="Logout" component={LoginScreen} />
