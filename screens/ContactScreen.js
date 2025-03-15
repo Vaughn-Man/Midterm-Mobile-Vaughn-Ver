@@ -57,10 +57,13 @@ const styles = StyleSheet.create({
     },
 
     header: { 
-        fontSize: 22, 
+        fontSize: 24, 
         fontWeight: "bold", 
         textAlign: "center", 
-        marginBottom: 25 
+        marginBottom: 25, 
+        color: "tomato",
+        textTransform: "uppercase",
+        letterSpacing: 1.2
     },
 
     inputContainer: { 
@@ -70,13 +73,14 @@ const styles = StyleSheet.create({
 
     input: {
         fontSize: 16,
-        paddingVertical: 12,
+        paddingVertical: 14,
         paddingHorizontal: 15,
         borderWidth: 1,
-        borderColor: "#ddd",
-        borderRadius: 10,
-        backgroundColor: "#f9f9f9",
-        marginBottom: 15
+        borderColor: "#ccc",
+        borderRadius: 12,
+        backgroundColor: "#fff5f5",
+        marginBottom: 15,
+        color: "#333"
     },
 
     messageInput: { 
@@ -86,8 +90,8 @@ const styles = StyleSheet.create({
 
     sendButton: {
         backgroundColor: "tomato",
-        paddingVertical: 14,
-        borderRadius: 10,
+        paddingVertical: 16,
+        borderRadius: 12,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
@@ -99,37 +103,47 @@ const styles = StyleSheet.create({
 
     sendButtonText: { 
         color: "#fff", 
-        fontSize: 16, 
-        fontWeight: "bold" 
+        fontSize: 17, 
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        letterSpacing: 1
     },
 
     contactDetails: { 
         padding: 20, 
-        borderRadius: 10, 
-        backgroundColor: "#f1f1f1", 
+        borderRadius: 12, 
+        backgroundColor: "#ffe6e6", 
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
-        width: "100%"
+        width: "100%",
+        borderWidth: 1,
+        borderColor: "tomato",
     },
 
     detailsHeader: { 
         fontSize: 18, 
         fontWeight: "bold", 
-        marginBottom: 10 
+        marginBottom: 10,
+        color: "tomato",
+        textTransform: "uppercase",
+        letterSpacing: 1
     },
 
     detailText: { 
-        fontSize: 14, 
+        fontSize: 15, 
         marginBottom: 8, 
-        lineHeight: 22 
+        lineHeight: 24, 
+        color: "#444",
+        fontWeight: "500"
     },
 
     linkText: { 
-        color: "blue", 
-        textDecorationLine: "underline" 
+        color: "#0056b3", 
+        textDecorationLine: "underline", 
+        fontWeight: "bold"
     },
 });
 

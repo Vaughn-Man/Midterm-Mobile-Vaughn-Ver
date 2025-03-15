@@ -1,94 +1,87 @@
 import React from "react";
-import { TextInput, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
-import { View, Text } from "react-native-web";
+import { TextInput, StyleSheet, TouchableOpacity, View, Text } from "react-native";
 
 const LoginScreen = ({ navigation }) => {
     return (
-        <ImageBackground
-            source={require("../assets/images/splash-bg.jpg")} t
-            style={styles.background}
-        >
-            <View style={styles.container}>
-                <Text style={styles.title}>Welcome Back!</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Enter Username"
-                    placeholderTextColor="#fff"
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholder="Enter Password"
-                    placeholderTextColor="#fff"
-                    secureTextEntry
-                />
-                
-                <TouchableOpacity 
-                    style={styles.loginButton} 
-                    onPress={() => navigation.navigate('Home')}
-                >
-                    <Text style={styles.buttonText}>Login</Text>
-                </TouchableOpacity>
+        <View style={styles.container}>
+            <Text style={styles.title}>Welcome Back!</Text>
+            
+            <TextInput
+                style={styles.input}
+                placeholder="Enter Username"
+                placeholderTextColor="#7a2323"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Enter Password"
+                placeholderTextColor="#7a2323"
+                secureTextEntry
+            />
+            
+            <TouchableOpacity 
+                style={styles.loginButton} 
+                onPress={() => navigation.navigate('Home')}
+            >
+                <Text style={styles.loginButtonText}>Login</Text>
+            </TouchableOpacity>
 
-                <TouchableOpacity style={styles.signUpButton}>
-                    <Text style={styles.buttonText}>Sign Up</Text>
-                </TouchableOpacity>
-            </View>
-        </ImageBackground>
+            <TouchableOpacity style={styles.signUpButton}>
+                <Text style={styles.signUpButtonText}>Sign Up</Text>
+            </TouchableOpacity>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
-    background: {
+    container: {
         flex: 1,
-        backgroundColor: "tomato", 
         justifyContent: "center",
         alignItems: "center",
-    },
-    container: {
-        backgroundColor: "rgba(0, 0, 0, 0.3)", 
-        padding: 30,
-        borderRadius: 20,
-        width: "90%",
-        alignItems: "center",
+        backgroundColor: "#f28e80",  // Light Tomato Background
+        padding: 20,
     },
     title: {
         color: "#fff",
         fontSize: 32,
         fontWeight: "bold",
-        marginBottom: 20,
+        marginBottom: 25,
     },
     input: {
-        width: "100%",
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
+        width: "90%",
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
         borderRadius: 10,
         padding: 12,
-        color: "#fff",
+        color: "#7a2323",
         marginBottom: 15,
-        borderColor: "#fff",
-        borderWidth: 1,
+        borderColor: "#e57373",
+        borderWidth: 1.5,
     },
     loginButton: {
-        backgroundColor: "#fff",
-        padding: 12,
+        backgroundColor: "#c94c4c",
+        padding: 14,
         borderRadius: 10,
-        width: "100%",
+        width: "90%",
         alignItems: "center",
-        marginVertical: 5,
+        marginVertical: 10,
+    },
+    loginButtonText: {
+        color: "#fff",
+        fontWeight: "bold",
+        fontSize: 18,
     },
     signUpButton: {
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
-        padding: 12,
+        backgroundColor: "#fff",
+        padding: 14,
         borderRadius: 10,
-        width: "100%",
+        width: "90%",
         alignItems: "center",
-        marginTop: 5,
-        borderColor: "#fff",
-        borderWidth: 1,
+        borderColor: "#c94c4c",
+        borderWidth: 2,
     },
-    buttonText: {
-        color: "tomato",
+    signUpButtonText: {
+        color: "#c94c4c",
         fontWeight: "bold",
-        fontSize: 16,
+        fontSize: 18,
     },
 });
 

@@ -29,7 +29,6 @@ const AboutScreen = () => {
                 </Text>
             </View>
 
-            {/* Footer */}
             <Text style={styles.footerText}>Thank you for choosing us! 💙</Text>
         </ScrollView>
     );
@@ -45,15 +44,18 @@ const styles = StyleSheet.create({
     },
 
     header: { 
-        fontSize: 22, 
+        fontSize: 24, 
         fontWeight: "bold", 
         textAlign: "center", 
-        marginBottom: 20 
+        marginBottom: 20, 
+        color: "tomato",
+        textTransform: "uppercase",
+        letterSpacing: 1.2
     },
 
     aboutImage: { 
         width: "100%", 
-        height: 180, 
+        height: 200, 
         borderRadius: 12, 
         marginBottom: 25 
     },
@@ -61,35 +63,44 @@ const styles = StyleSheet.create({
     description: { 
         fontSize: 16, 
         textAlign: "center", 
-        color: "#444", 
+        color: "#333", 
         marginBottom: 25, 
-        lineHeight: 24,
+        lineHeight: 26,
+        fontWeight: "500",
         paddingHorizontal: 10 
     },
 
     section: { 
-        backgroundColor: "#f9f9f9", 
+        backgroundColor: "#fff5f5", 
         padding: 20, 
-        borderRadius: 10, 
+        borderRadius: 12, 
         marginBottom: 20, 
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3, 
-        width: "100%" 
+        width: "100%",
+        borderWidth: 1,
+        borderColor: "tomato",
     },
 
     sectionTitle: { 
         fontSize: 18, 
         fontWeight: "bold", 
-        marginBottom: 10 
+        marginBottom: 10, 
+        color: "tomato",
+        textAlign: "center",
+        textTransform: "uppercase",
+        letterSpacing: 1
     },
 
     sectionText: { 
-        fontSize: 14, 
-        color: "#555", 
-        lineHeight: 22 
+        fontSize: 15, 
+        color: "#444", 
+        lineHeight: 24, 
+        fontWeight: "500",
+        textAlign: "justify"
     },
 
     footerText: { 
@@ -97,8 +108,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold", 
         marginTop: 30, 
         textAlign: "center", 
-        color: "#777",
-        paddingHorizontal: 10 
+        color: "#555",
+        paddingHorizontal: 15, 
+        paddingVertical: 10,
+        borderTopWidth: 1,
+        borderTopColor: "#ddd",
     },
 });
 

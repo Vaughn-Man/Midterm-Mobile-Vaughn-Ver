@@ -88,11 +88,11 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 10, backgroundColor: "#fff" },
+    container: { flex: 1, padding: 15, backgroundColor: "#fff" },
 
     searchContainer: { 
-        marginVertical: 10, 
-        padding: 10, 
+        marginVertical: 15, 
+        padding: 12, 
         backgroundColor: "#ffffff", 
         borderRadius: 12, 
         shadowColor: "#000",
@@ -101,40 +101,117 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 3, 
     },
+
     searchInput: { 
         fontSize: 16, 
-        paddingVertical: 8,
-        paddingHorizontal: 12,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
         borderWidth: 1, 
-        borderColor: "#ddd", 
-        borderRadius: 8,
-        backgroundColor: "#f9f9f9",
+        borderColor: "#ccc", 
+        borderRadius: 12,
+        backgroundColor: "#fff5f5",
+        color: "#333"
     },
 
     sectionContainer: {
-        backgroundColor: "#f8f8f8",
-        borderRadius: 10,
+        backgroundColor: "#ffebe6",
+        borderRadius: 12,
         width: "100%",
         alignItems: "center",
         marginBottom: 20,
-        marginTop: 15,
-        marginLeft: 10,
+        paddingVertical: 8,
         alignSelf: "center",
     },
 
-    carouselImage: { width: "100%", height: 150, borderRadius: 10, alignSelf: "center"},
+    sectionTitle: { 
+        fontSize: 22, 
+        fontWeight: "bold", 
+        marginVertical: 10, 
+        color: "tomato",
+        textTransform: "uppercase",
+        letterSpacing: 1 
+    },
 
-    sectionTitle: { fontSize: 18, fontWeight: "bold", marginVertical: 10, marginLeft: 20 },
-    categoryContainer: { flexDirection: "row", marginLeft: 30, marginBottom: 10 },
-    categoryItem: { alignItems: "center", marginRight: 15, padding: 10, backgroundColor: "#eee", borderRadius: 10 },
-    categoryIcon: { fontSize: 24 },
+    carouselImage: { 
+        width: "92%", 
+        height: 160, 
+        borderRadius: 12, 
+        alignSelf: "center",
+        marginVertical: 10 
+    },
 
-    productCard: { width: "48%", marginBottom: 15, alignItems: "center", backgroundColor: "#f9f9f9", padding: 10, borderRadius: 10, borderWidth: 2, borderColor: "tomato" },
-    productImage: { width: 100, height: 100, borderRadius: 10 },
-    productName: { fontSize: 14, fontWeight: "bold", marginVertical: 5 },
-    productPrice: { fontSize: 16, color: "tomato" },
-    addButton: { marginTop: 5, backgroundColor: "tomato", padding: 5, borderRadius: 5, width: "100%", alignItems: "center" },
-    addButtonText: { color: "#fff", fontSize: 14 },
+    categoryContainer: { 
+        flexDirection: "row", 
+        marginBottom: 15, 
+        paddingHorizontal: 10 
+    },
+
+    categoryItem: { 
+        alignItems: "center", 
+        marginRight: 15, 
+        paddingVertical: 12, 
+        paddingHorizontal: 15, 
+        backgroundColor: "#fff5f5", 
+        borderRadius: 12, 
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+        elevation: 2 
+    },
+
+    categoryIcon: { fontSize: 28, marginBottom: 5 },
+
+    productCard: { 
+        width: "48%", 
+        marginBottom: 20, 
+        alignItems: "center", 
+        backgroundColor: "#fffae6", 
+        padding: 12, 
+        borderRadius: 12, 
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3 
+    },
+
+    productImage: { 
+        width: 110, 
+        height: 110, 
+        borderRadius: 12, 
+        marginBottom: 8 
+    },
+
+    productName: { 
+        fontSize: 16, 
+        fontWeight: "bold", 
+        marginBottom: 3, 
+        color: "#2c3e50", 
+        textAlign: "center" 
+    },
+
+    productPrice: { 
+        fontSize: 16, 
+        color: "#27ae60", 
+        fontWeight: "600" 
+    },
+
+    addButton: { 
+        marginTop: 10, 
+        backgroundColor: "tomato", 
+        paddingVertical: 10, 
+        borderRadius: 8, 
+        width: "100%", 
+        alignItems: "center" 
+    },
+
+    addButtonText: { 
+        color: "#fff", 
+        fontSize: 15, 
+        fontWeight: "bold", 
+        textTransform: "uppercase" 
+    },
 });
 
 

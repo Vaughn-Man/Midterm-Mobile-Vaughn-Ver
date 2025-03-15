@@ -50,38 +50,100 @@ function CartScreen() {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 10, backgroundColor: "#fff" },
+    container: { 
+        flex: 1, 
+        padding: 15, 
+        backgroundColor: "#fff" 
+    },
 
-    header: { fontSize: 24, fontWeight: "bold", color: "tomato", textAlign: "center", marginVertical: 15 },
+    header: { 
+        fontSize: 26, 
+        fontWeight: "bold", 
+        color: "tomato", 
+        textAlign: "center", 
+        marginBottom: 20 
+    },
 
     cartItem: {
         flexDirection: "row",
         alignItems: "center",
-        backgroundColor: "#fff5f5",
-        borderRadius: 10,
-        padding: 10,
-        marginVertical: 5,
-        borderColor: "tomato",
-        borderWidth: 1,
+        backgroundColor: "#ffebe6",
+        borderRadius: 12,
+        padding: 12,
+        marginBottom: 10,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
     },
 
-    cartImage: { width: 60, height: 60, borderRadius: 10, marginRight: 10 },
-    cartDetails: { flex: 1 },
-    itemName: { fontSize: 16, fontWeight: "bold" },
-    itemPrice: { fontSize: 14, color: "tomato", marginVertical: 2 },
-    itemQuantity: { fontSize: 14, color: "#555" },
+    cartImage: { 
+        width: 70, 
+        height: 70, 
+        borderRadius: 12, 
+        marginRight: 12 
+    },
 
-    removeButton: { backgroundColor: "#ff6347", padding: 5, borderRadius: 5 },
-    removeButtonText: { color: "#fff", fontSize: 14 },
+    cartDetails: { 
+        flex: 1 
+    },
+
+    itemName: { 
+        fontSize: 18, 
+        fontWeight: "bold", 
+        color: "#2c3e50" 
+    },
+
+    itemPrice: { 
+        fontSize: 16, 
+        color: "tomato", 
+        fontWeight: "600", 
+        marginVertical: 3 
+    },
+
+    itemQuantity: { 
+        fontSize: 15, 
+        color: "#555" 
+    },
+
+    removeButton: { 
+        backgroundColor: "#ff4d4d", 
+        paddingVertical: 8, 
+        paddingHorizontal: 12, 
+        borderRadius: 8, 
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+        elevation: 2 
+    },
+
+    removeButtonText: { 
+        color: "#fff", 
+        fontSize: 15, 
+        fontWeight: "bold" 
+    },
 
     checkoutButton: {
         backgroundColor: "tomato",
-        padding: 15,
-        borderRadius: 8,
+        paddingVertical: 18,
+        borderRadius: 12,
         alignItems: "center",
-        marginVertical: 15,
+        marginTop: 20,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+        elevation: 4,
     },
-    checkoutButtonText: { color: "#fff", fontSize: 18, fontWeight: "bold" },
+
+    checkoutButtonText: { 
+        color: "#fff", 
+        fontSize: 20, 
+        fontWeight: "bold", 
+        textTransform: "uppercase" 
+    },
 });
 
 export default CartScreen;
