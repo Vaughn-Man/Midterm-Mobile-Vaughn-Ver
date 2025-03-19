@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ShopScreen from './screens/ShopScreen';
 import ContactScreen from './screens/ContactScreen';
@@ -10,52 +9,49 @@ import LoginScreen from './screens/LoginScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import NavBar from './components/NavBar';
 import 'react-native-reanimated';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 export default function App() {
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator options={{ headerShown: false}} >
-      <Stack.Screen
+      <Drawer.Navigator options={{ headerShown: false}} >
+      <Drawer.Screen
       name="NavBar"
       component={NavBar}
       options={{ headerShown: false}}
       /> 
-      <Stack.Screen
+      <Drawer.Screen
           name="Home"
           component={HomeScreen}
         />
-        <Stack.Screen
-          name="Logout"
-          component={LoginScreen}
-        />
-        <Stack.Screen
+        <Drawer.Screen
           name="Profile"
           component={ProfileScreen}
         />
-        <Stack.Screen
+        <Drawer.Screen
           name="Shop"
           component={ShopScreen}
         />
-        <Stack.Screen
+        <Drawer.Screen
           name="Contact"
           component={ContactScreen}
         />
-        <Stack.Screen
+        <Drawer.Screen
           name="Cart"
           component={CartScreen}
         />
-        <Stack.Screen
+        <Drawer.Screen
           name="About"
           component={AboutScreen}
         />
-        <Stack.Screen
-        name="Login"
+        <Drawer.Screen
+        name="Logout"
         component={LoginScreen}
         />
-      </Stack.Navigator>
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

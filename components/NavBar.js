@@ -1,6 +1,6 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Image } from "react-native-web";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Image, TouchableOpacity, View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import ShopScreen from "../screens/ShopScreen";
@@ -10,51 +10,99 @@ import AboutScreen from "../screens/AboutScreen";
 import LoginScreen from "../screens/LoginScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
-const NavBar = () => {
+const CustomDrawerItem = ({ label, iconName }) => (
+  <View style={styles.drawerItem}>
+    <Text style={styles.drawerText}>{label}</Text>
+    <Ionicons name={iconName} size={22} color="white" />
+  </View>
+);
+
+const NavBar = ({ navigation }) => {
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
+    <Drawer.Navigator
+      screenOptions={{
         headerTitle: () => (
           <Image
-            source={require("../assets/images/logo.png")}
-            style={{ width: 120, height: 30,  }}
+            source={require("../assets/images/react-dark.jpg")}
+            style={{ width: "100%", height: "100%", resizeMode: "contain" }}
           />
         ),
         headerTitleAlign: "center",
-        headerStyle: {
-          height: 60,
-          backgroundColor: "#fff" 
-        },
-        tabBarIcon: ({ color, size }) => {
-          let iconName;
-          if (route.name === "Home") iconName = "home-outline";
-          else if (route.name === "Shop") iconName = "cart-outline";
-          else if (route.name === "Cart") iconName = "basket-outline";
-          else if (route.name === "Contact") iconName = "call-outline";
-          else if (route.name === "About") iconName = "information-circle-outline";
-          else if (route.name === "Logout") iconName = "log-out-outline";
-          else if (route.name === "Profile") iconName = "person-outline";
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-        tabBarStyle:  {
-          display: route.name === "Logout" ? "none" : "flex",
-        },
-        tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray",
-        tabBarStyle: { backgroundColor: "#fff", height: 60, paddingBottom: 10 },
-      })}
+        headerStyle: styles.header,
+        headerLeft: () => (
+          <TouchableOpacity onPress={() => navigation.toggleDrawer()} style={styles.menuButton}>
+            <Ionicons name="menu-outline" size={28} color="white" />
+          </TouchableOpacity>
+        ),
+        drawerStyle: styles.drawer, 
+        drawerActiveTintColor: "white",
+        drawerInactiveTintColor: "#bbb",
+      }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Shop" component={ShopScreen} />
-      <Tab.Screen name="Cart" component={CartScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Contact" component={ContactScreen} />
-      <Tab.Screen name="About" component={AboutScreen} />
-      <Tab.Screen name="Logout" component={LoginScreen} />
-    </Tab.Navigator>
+      <Drawer.Screen 
+        name="Home" 
+        component={HomeScreen} 
+        options={{ drawerLabel: () => <CustomDrawerItem label="Home" iconName="home-outline" /> }} 
+      />
+      <Drawer.Screen 
+        name="Shop" 
+        component={ShopScreen} 
+        options={{ drawerLabel: () => <CustomDrawerItem label="Shop" iconName="cart-outline" /> }} 
+      />
+      <Drawer.Screen 
+        name="Cart" 
+        component={CartScreen} 
+        options={{ drawerLabel: () => <CustomDrawerItem label="Cart" iconName="basket-outline" /> }} 
+      />
+      <Drawer.Screen 
+        name="Profile" 
+        component={ProfileScreen} 
+        options={{ drawerLabel: () => <CustomDrawerItem label="Profile" iconName="person-outline" /> }} 
+      />
+      <Drawer.Screen 
+        name="Contact" 
+        component={ContactScreen} 
+        options={{ drawerLabel: () => <CustomDrawerItem label="Contact" iconName="call-outline" /> }} 
+      />
+      <Drawer.Screen 
+        name="About" 
+        component={AboutScreen} 
+        options={{ drawerLabel: () => <CustomDrawerItem label="About" iconName="information-circle-outline" /> }} 
+      />
+      <Drawer.Screen 
+        name="Logout" 
+        component={LoginScreen} 
+        options={{ drawerLabel: () => <CustomDrawerItem label="Logout" iconName="log-out-outline" /> }} 
+      />
+    </Drawer.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  header: {
+    height: 60,
+    backgroundColor: "#121212", 
+  },
+  menuButton: {
+    marginLeft: 15,
+  },
+  drawer: {
+    backgroundColor: "#1E1E1E", 
+  },
+  drawerItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  drawerText: {
+    color: "white",
+    fontSize: 16,
+  },
+});
 
 export default NavBar;
