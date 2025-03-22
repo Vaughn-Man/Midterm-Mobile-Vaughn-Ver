@@ -1,15 +1,14 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { useNavigation } from "@react-navigation/native"; 
-import { Image, TouchableOpacity, View, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
-import ShopScreen from "../screens/ShopScreen";
-import CartScreen from "../screens/CartScreen";
 import ContactScreen from "../screens/ContactScreen";
 import AboutScreen from "../screens/AboutScreen";
 import LoginScreen from "../screens/LoginScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import ServiceScreen from "../screens/ServiceScreen";
+import SoftwareRequestScreen from "../screens/SoftwareRequestScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -51,27 +50,27 @@ const NavBar = ({ navigation }) => {
         })} 
       />
       <Drawer.Screen 
-        name="Shop" 
-        component={ShopScreen} 
+        name="Software" 
+        component={SoftwareRequestScreen} 
         options={({ navigation }) => ({
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.toggleDrawer()} style={styles.menuButton}>
               <Ionicons name="menu-outline" size={28} color="white" />
             </TouchableOpacity>
           ),
-          drawerLabel: () => <CustomDrawerItem label="Shop" iconName="cart-outline" />,
+          drawerLabel: () => <CustomDrawerItem label="Software" iconName="code-outline" />,
         })}  
       />
       <Drawer.Screen 
-        name="Cart" 
-        component={CartScreen} 
+        name="Service" 
+        component={ServiceScreen} 
         options={({ navigation }) => ({
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.toggleDrawer()} style={styles.menuButton}>
               <Ionicons name="menu-outline" size={28} color="white" />
             </TouchableOpacity>
           ),
-          drawerLabel: () => <CustomDrawerItem label="Cart" iconName="basket-outline" />,
+          drawerLabel: () => <CustomDrawerItem label="Service" iconName="settings-outline" />,
         })}
       />
       <Drawer.Screen 
