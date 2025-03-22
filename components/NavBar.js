@@ -27,13 +27,6 @@ const NavBar = ({ navigation }) => {
       screenOptions={{
         headerStyle: styles.header,
         headerTitleAlign: "center",
-        headerTitle: () => (
-          <Image
-            source={require("../assets/images/react-dark.jpg")}
-            style={{ width: "100%", height: "100%" }}
-            resizeMode="contain"
-          />
-        ),
         headerLeft: () => (
           <TouchableOpacity onPress={() => navigation.toggleDrawer()} style={styles.menuButton}>
             <Ionicons name="menu-outline" size={28} color="white" />
@@ -136,7 +129,7 @@ const NavBar = ({ navigation }) => {
 const styles = StyleSheet.create({
   header: {
     height: 60,
-    backgroundColor: "#121212", 
+    backgroundColor: "#343434", 
   },
   menuButton: {
     marginLeft: 15,
